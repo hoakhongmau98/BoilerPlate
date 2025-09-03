@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail</title>
+    <style>
+        .container{
+            margin: auto;
+        }
+        .title{
+            text-align: center;
+        }
+        table, th, td {
+          border:1px solid black;
+          border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <p>Quá trình tải lên hoàn tất.</p>
+      <p>Dưới đây là kết quả của việc tải lên:</p>
+      <p><strong>- Tổng số người dùng:</strong> {{totalUsers}}</p>
+      <p><strong>- Tổng số người dùng tải lên thành công:</strong> {{totalImported}}</p>
+      <p><strong>- Tổng số người dùng tải lên thất bại:</strong> {{totalFailImported}}</p>
+      <p><strong>- Các bản ghi lỗi</strong></p>
+          <div>
+            <table>
+                <tr>
+                <td><strong>STT</strong></td>
+                {{#each failToImported}}                  
+                  <td>
+                    {{this.index}}
+                  </td>                  
+                {{/each}}
+                </tr>
+            </table>
+          </div>
+    </div>
+</body>
+</html>
